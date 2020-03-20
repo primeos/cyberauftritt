@@ -9,3 +9,6 @@ Thumbs.db
 ehthumbs.db
 
 .idea
+
+# Nix
+gemset.nix
