@@ -15,4 +15,4 @@ jobs:
         -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
         jekyll/builder:3 /bin/bash -c "chmod 777 /srv/jekyll{,/Gemfile.lock} && export PAGES_REPO_NWO=fsi-tue/cyberauftritt && jekyll build"
     - name: Check the hyperlinks via html-proofer
-      run: bundle exec rake
+      run: rake
