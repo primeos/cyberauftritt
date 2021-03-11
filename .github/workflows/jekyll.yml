@@ -15,3 +15,8 @@ jobs:
       run: |
         docker run -v ${{ github.workspace }}:/srv/jekyll jekyll/jekyll:3 \
         /bin/bash -c "rake"
+    - name: Upload the result (_site)
+      uses: actions/upload-artifact@v2
+      with:
+        name: site
+        path: _site/
