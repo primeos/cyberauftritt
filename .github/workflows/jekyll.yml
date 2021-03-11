@@ -4,15 +4,13 @@ on: [push, pull_request]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
-    - name: Build the site in the jekyll/builder container
+    - name: Build the site
       run: |
         docker run -v ${{ github.workspace }}:/srv/jekyll jekyll/jekyll:3 \
-        /bin/bash -c "chmod 777 /srv/jekyll{,/Gemfile.lock} && export PAGES_REPO_NWO=fsi-tue/cyberauftritt && jekyll build"
+        /bin/bash -c "chmod 777 /srv/jekyll{,/Gemfile.lock} && jekyll build"
     - name: Check the hyperlinks via html-proofer
       run: |
         docker run -v ${{ github.workspace }}:/srv/jekyll jekyll/jekyll:3 \
