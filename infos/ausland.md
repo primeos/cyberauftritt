@@ -21,7 +21,7 @@ Programme für EU-Länder(ERASMUS), Nordamerika und Australien/Neuseeland.
 Aber auch exotischere Gebiete wie Südafrika oder Lateinamerika können
 per Austausch besucht werden. Die wichtigsten Informationen und Termine
 sind auf der
-[International-Rubrik](https://www.uni-tuebingen.de/international/studieren-im-ausland.html)
+[International-Rubrik](https://404.uni-tuebingen.de/international/studieren-im-ausland.html)
 zu finden. Weitere Informationen bietet weiterhin das Dezernat für
 Internationale Beziehungen, welches alle Auslandsprogramme koordiniert.
 Vor allem das Helpdesk des Dezernates steht täglich unter der Woche für
