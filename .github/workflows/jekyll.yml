@@ -9,8 +9,8 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build the site
       run: |
-        echo "chmod 777 . Gemfile.lock"
-        docker run -v "${{ github.workspace }}:/srv/jekyll" -u "$(id -u)" jekyll/jekyll:3 \
+        mkdir _site && chmod o+w _site Gemfile.lock # jekyll in the container has UID/GID 1000
+        docker run -v "${{ github.workspace }}:/srv/jekyll" jekyll/jekyll:3 \
           /bin/bash -c "jekyll build"
     - name: Check the hyperlinks via html-proofer
       run: |
