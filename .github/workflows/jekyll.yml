@@ -9,12 +9,13 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build the site
       run: |
-        docker run -v ${{ github.workspace }}:/srv/jekyll jekyll/jekyll:3 \
-        /bin/bash -c "chmod 777 /srv/jekyll{,/Gemfile.lock} && jekyll build"
+        echo "chmod 777 . Gemfile.lock"
+        docker run -v "${{ github.workspace }}:/srv/jekyll" -u "$(id -u)" jekyll/jekyll:3 \
+          /bin/bash -c "jekyll build"
     - name: Check the hyperlinks via html-proofer
       run: |
         docker run -v ${{ github.workspace }}:/srv/jekyll jekyll/jekyll:3 \
-        /bin/bash -c "rake"
+          /bin/bash -c "rake"
     - name: Upload the result (_site)
       uses: actions/upload-artifact@v2
       with:
