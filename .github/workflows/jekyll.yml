@@ -11,11 +11,11 @@ jobs:
       run: |
         mkdir _site && chmod o+w _site Gemfile.lock # jekyll in the container has UID/GID 1000
         docker run -v "${{ github.workspace }}:/srv/jekyll" jekyll/jekyll:3 \
-          /bin/bash -c "jekyll build"
+          jekyll build
     - name: Check the hyperlinks via html-proofer
       run: |
-        docker run -v ${{ github.workspace }}:/srv/jekyll jekyll/jekyll:3 \
-          /bin/bash -c "rake"
+        docker run -v "${{ github.workspace }}:/srv/jekyll" jekyll/jekyll:3 \
+          rake
     - name: Upload the result (_site)
       uses: actions/upload-artifact@v2
       with:
